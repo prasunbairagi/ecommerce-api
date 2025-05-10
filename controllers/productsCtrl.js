@@ -52,7 +52,7 @@ export const createProductCtrl = asyncHandler(async (req, res) => {
 		price,
 		totalQty,
 		brand: brand.toLowerCase(),
-		images: req.file.path,
+		images: req.files.map(file=>file.path)
 	});
 	//Push the product into Category
 	categoryFound.products.push(product._id);

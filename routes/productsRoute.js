@@ -14,7 +14,7 @@ productRouter.post(
   "/",
   isLoggedIn,
   isAdmin,
-  upload.single("file"),
+  upload.array("file"),
   createProductCtrl
 );
 productRouter.get("/", getProductsCtrl);
